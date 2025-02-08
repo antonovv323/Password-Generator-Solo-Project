@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #1C1C1C, #0F2027, #203A43, #2C5364);
+    font-family: "Karla", serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#generator-container {
+    width: 550px;
+    height: 550px;
+    background-color: #ECFDF5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+h1 {
+    margin-top: 60px;
+    margin-bottom: 0;
+    font-size: 40px;
+    color: #273549;
+}
+
+#color-of-the-half-title {
+    color: #10B981;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+p {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #6B7280;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#controls-row-1 {
+    display: flex;
+    margin-top: 15px;
+}
+
+#password-length-input {
+    margin-right: 5px;
+    width: 195px;
+    height: 45px;
+    background-color: white;
+    color: #273549;
+    border: 1px solid #273549;
+    border-radius: 6px;
+    font-family: "Inter", serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавен преход */
+}
+
+#password-length-input::placeholder {
+    color: #273549;
+    text-align: center;
+    font-family: "Karla", serif;
+}
+
+#password-length-input:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.04);
+}
+
+#generate-passwords-btn {
+    margin-left: 5px;
+    width: 195px;
+    height: 45px;
+    background-color: #10B981;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter", serif;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавен преход */
+}
+
+#generate-passwords-btn:hover {
+    background-color: #0c9f74;  
+    transform: scale(1.04);  
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#controls-row-2 {
+    display: flex;
+    margin-top: 15px;
+}
+
+#reset-btn {
+    margin-right: 5px;
+    width: 195px;
+    height: 45px;
+    background-color: #c1121f;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter", serif;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавен преход */
+}
+
+#reset-btn:hover {
+    background-color: #9b0f1a;  
+    transform: scale(1.04);  
+}
+
+.symbols-and-numbers-btn {
+    margin-left: 5px;
+    width: 195px;
+    height: 45px;
+    background-color: #273549;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter", serif;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавен преход */
+}
+
+.symbols-and-numbers-btn:hover {
+    background-color: #1f2c3d;  
+    transform: scale(1.04);
+}
+
+.btn-green-background {
+    background-color: #10B981;
+}
+
+.btn-red-background {
+    background-color: #c1121f;
+}
+
+.hide-on-text, .hide-slash-text, .hide-off-text {
+    display: none;
+}
+
+.btn-red-hover-effect:hover {
+    background-color: #9b0f1a;  
+    transform: scale(1.04);
+}
+
+.btn-green-hover-effect:hover {
+    background-color: #0c9f74;  
+    transform: scale(1.04); 
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#line {
+    margin: 30px 0;
+    width: 397px;
+    border-bottom: 1px solid #D5D4D8;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#generated-passwords-container {
+    display: flex;
+}
+
+.generated-password-btns {
+    margin: 0 5px;
+    width: 195px;
+    height: 45px;
+    background-color: #273549;
+    color: #5DEF92;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter", serif;  
+    font-size: 15px;
+}
+
+.generated-password-btns:hover {
+    background-color: #1f2c3d;  
+    transform: scale(1.04);
+}
+
+#generated-password-1, #generated-password-2 {
+    outline: none;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+#footer {
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+/* STYLES FOR PHONES IN PORTRAIT  */
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 18.3px;
+    }
+    
+    #controls-row-1, #controls-row-2 {
+        width: 355px;
+    }
+
+    #line {
+        width: 352px; 
+    }
+
+    .generated-password-btns {
+        width: 173px;
+    }
+
+    #footer {
+        font-size: 16px;  
+    }
+
+}
+
+/* STYLES FOR PHONES IN LANDSCAPE */
+
+@media screen and (min-width: 600px) and (max-width: 999px) and (orientation: landscape) {
+
+    body {
+        margin: 100px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    p {
+        font-size: 21.5px;
+    }
+
+}
+
+/* STYLES FOR PHONES lIKE A SAMSUNG GALAXY S8+ AND GALAXY Z FOLD 5  */
+
+@media only screen and (max-width: 360px) and (orientation: portrait) {
+    
+    h1 {
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+    
+    #controls-row-1, #controls-row-2 {
+        width: 330px;
+    }
+
+    #line {
+        width: 328px; 
+    }
+
+    .generated-password-btns {
+        width: 161px;
+    }
+
+    #footer {
+        font-size: 15.5px;  
+    }
+    
+}
+
+/* ---------------------------------------------------------------------------- */

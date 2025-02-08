@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Karla:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    <body>
+        <div id="generator-container">
+            
+            <h1>Generate a <br> <span id="color-of-the-half-title">random password</span></h1>
+            
+            <p>Never use an insecure password again.</p>
+            
+            <div id="controls-container">
+                
+                <div id="controls-row-1">
+                    
+                    <input id="password-length-input" type="number" min="1" max="15" step="1" placeholder="Set password length" onfocus="this.placeholder=''" 
+                    onblur="this.placeholder='Set password length'">
+                    
+                    <button id="generate-passwords-btn" onclick="generatePasswords()">Generate  passwords</button>
+                    
+                </div>
+                
+                <div id="controls-row-2">
+                    
+                    <button id="reset-btn" onclick="reset()">Reset</button>
+                    
+                    <button class="symbols-and-numbers-btn" onclick="removeOrAddSymbolsAndNumbers()"> 
+                        Symb & Num <br> <span class="on-text">ON</span>
+                                        <span class="slash-text">/</span>
+                                        <span class="off-text">OFF</span>      
+                    </button>
+                    
+                </div>
+            </div>
+            
+            <div id="line"></div>
+            
+            <div id="generated-passwords-container">
+                <button class="generated-password-btns" id="generated-password-1" onclick="copyPassword()"></button>
+                <button class="generated-password-btns" id="generated-password-2" onclick="copyPassword()"></button>
+            </div>
+
+            <div id="footer">© Built and designed by <a href="https://www.linkedin.com/in/anton-antonov-589791326/" target="_blank">Anton Antonov</a>.</div>
+            
+        </div>
+        <script src="index.js"></script>
+    </body>
+    
+</html>
