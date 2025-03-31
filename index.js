@@ -2,7 +2,7 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 "/"];
 
 let originalCharacters = [...characters];
-let isClicked = false;
+let areSymbolsAndNumbersRemoved = false;
 
 const inputEl = document.getElementById("password-length-input")
 
@@ -22,7 +22,6 @@ function generatePasswords() {
     
     if (inputEl.value > 15 || inputEl.value < 1) {
         alert("The password must be between 1 and 15 characters long 😃. Please try again!")
-        return (generatedPasswordBtn1.textContent = "", generatedPasswordBtn2.textContent = "");
     } else {
         generatedPasswordBtn1.textContent = ""
         generatedPasswordBtn2.textContent = ""
@@ -50,7 +49,7 @@ function reset() {
     generatedPasswordBtn2.textContent = ""
     characters.length = 0
     characters.push(...originalCharacters)
-    isClicked = false
+    areSymbolsAndNumbersRemoved = false
     symbolsAndNumbersBtn.classList.remove("btn-red-background")
     symbolsAndNumbersBtn.classList.remove("btn-green-background");
     symbolsAndNumbersBtn.classList.remove("btn-red-hover-effect")
@@ -66,7 +65,7 @@ function reset() {
 // REMOVE OR ADD SYMBOLS AND NUMBERS BUTTON - CLICK FUNCTION //
 function removeOrAddSymbolsAndNumbers() {  
     
-    if (isClicked === false) {
+    if (areSymbolsAndNumbersRemoved === false) {
         
         characters.splice(52); // Премахваме всичко след индекс 51
         
@@ -78,7 +77,7 @@ function removeOrAddSymbolsAndNumbers() {
         onText.classList.add("hide-on-text");
         slashText.classList.add("hide-slash-text");
         
-        isClicked = true
+        areSymbolsAndNumbersRemoved = true
         alert("❌ Symbols and numbers have been removed! Only letters are now included.")
         
     } else {   
@@ -93,7 +92,7 @@ function removeOrAddSymbolsAndNumbers() {
         onText.classList.remove("hide-on-text");
         offText.classList.add("hide-off-text");
         
-        isClicked = false
+        areSymbolsAndNumbersRemoved = false
         alert("✅ Symbols and numbers have been added back! The full character set is restored.");
         
     } 
