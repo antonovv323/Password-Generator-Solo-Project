@@ -5,6 +5,7 @@ let originalCharacters = [...characters];
 let areSymbolsAndNumbersRemoved = false;
 
 const inputEl = document.getElementById("password-length-input")
+let previousInputValue = ""
 
 const symbolsAndNumbersBtn = document.querySelector(".symbols-and-numbers-btn")
 const onText = document.querySelector(".on-text")
@@ -22,20 +23,23 @@ function generatePasswords() {
     
     if (inputEl.value > 15 || inputEl.value < 1) {
         alert("The password must be between 1 and 15 characters long 😃. Please try again!")
+        inputEl.value = previousInputValue
     } else {
         generatedPasswordBtn1.textContent = ""
         generatedPasswordBtn2.textContent = ""
     
         for (let i = 0; i < inputEl.value; i++) {
-            let fisrtRandomindexes = Math.floor(Math.random() * characters.length)
+            let firstRandomindexes = Math.floor(Math.random() * characters.length)
             let secondRandomindexes = Math.floor(Math.random() * characters.length)
         
-            let firstRandomSymbols = characters[fisrtRandomindexes]
+            let firstRandomSymbols = characters[firstRandomindexes]
             let secondRandomSymbols = characters[secondRandomindexes]
             
             generatedPasswordBtn1.textContent += firstRandomSymbols
             generatedPasswordBtn2.textContent += secondRandomSymbols
         }
+
+        previousInputValue = inputEl.value
     } 
 }
 
@@ -45,6 +49,7 @@ function generatePasswords() {
 // RESET BUTTON - CLICK FUNCTION //
 function reset() {
     inputEl.value = ""
+    previousInputValue = ""
     generatedPasswordBtn1.textContent = ""
     generatedPasswordBtn2.textContent = ""
     characters.length = 0
